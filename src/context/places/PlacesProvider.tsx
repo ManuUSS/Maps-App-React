@@ -1,3 +1,4 @@
+import { PlacesContext } from "./PlacesContext";
 
 export interface PlacesState {
     isLoading    : boolean;
@@ -11,6 +12,11 @@ const INITIAL_STATE:PlacesState = {
 
 export const PlacesProvider = () => {
   return (
-    <div>PlacesProvider</div>
+    <PlacesContext.Provider value={{ 
+        isLoading: true, userLocation: undefined 
+    }}
+    >
+
+    </PlacesContext.Provider>
   )
 }
