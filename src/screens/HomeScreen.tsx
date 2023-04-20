@@ -1,4 +1,4 @@
-import { MapView, MyLocation, ReactLogo } from "../components"
+import { MapView, MyLocation, ReactLogo, SearchBar } from '../components';
 
 
 export const HomeScreen = () => {
@@ -7,6 +7,7 @@ export const HomeScreen = () => {
       <MapView />
       <MyLocation />
       <ReactLogo />
+      <SearchBar />
     </div>
   )
 }
