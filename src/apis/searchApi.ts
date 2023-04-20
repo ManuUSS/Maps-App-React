@@ -5,6 +5,8 @@ const searchApi = axios.create({
     params: {
         limit: 5,
         language: 'es',
-        access_token:
+        access_token: 'pk.eyJ1IjoibWFudWpzIiwiYSI6ImNsYTM2YjVwYjBvNHkzd28zMDBneTUwMXgifQ.sSgFALIlmcliHgXKQQidQw'
     }
-})
+});
+
+export default searchApi;
