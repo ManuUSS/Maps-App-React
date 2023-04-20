@@ -4,8 +4,7 @@ import { MapState } from './MapProvider';
 
 type MapAction = { type: 'SetMap', payload: Map };
 
-export const MapReducer = ( state:MapState, action:MapAction ):MapState => {
-
+export const mapReducer = ( state:MapState, action:MapAction ):MapState => {
 
     switch ( action.type ) {
         case 'SetMap':
