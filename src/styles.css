@@ -3,10 +3,22 @@
 .loading-map {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
-    font-size: 3rem;
+    font-size: 3em;
     height: 100vh;
     position: fixed;
     right: 0;
     top: 0;
     width: 100vw;
+}
+
+.search-container {
+    position: fixed;
+    top: 1.25em;
+    left: 1.25em;
+    background-color: white;
+    z-index: 999;
+    box-shadow: 0 0.3125em 0.625em rgba(0, 0, 0, 0.2);
+    width: 13.75em;
+    padding: 1em;
+    border-radius: 0.3125em;
 }
