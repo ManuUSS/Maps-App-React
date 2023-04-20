@@ -9,7 +9,9 @@ export const mapReducer = ( state:MapState, action:MapAction ):MapState => {
     switch ( action.type ) {
         case 'SetMap':
             return {
-                ...state
+                ...state,
+                isMapReady: true,
+                map: action.payload
             }
     
         default:
