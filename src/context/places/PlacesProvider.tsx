@@ -10,13 +10,17 @@ const INITIAL_STATE:PlacesState = {
     userLocation: undefined
 }
 
-export const PlacesProvider = () => {
+interface Props {
+    children: JSX.Element | JSX.Element[]
+}
+
+export const PlacesProvider = ({ children } : Props ) => {
   return (
     <PlacesContext.Provider value={{ 
         isLoading: true, userLocation: undefined 
     }}
     >
-
+        { children }
     </PlacesContext.Provider>
   )
 }
