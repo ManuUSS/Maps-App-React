@@ -9,7 +9,8 @@ export const placesReducer = ( state: PlacesState, action: PlacesAction ): Place
         case 'setUserLocation': 
             return {
                 ...state,
-                userLocation: action.payload
+                userLocation: action.payload,
+                isLoading   : false
             }
         
 
