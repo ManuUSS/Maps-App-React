@@ -1,7 +1,9 @@
 import { PlacesState } from "./PlacesProvider";
+import { Feature } from '../../interfaces/places';
 
 type PlacesAction = 
-{ type: 'setUserLocation', payload: [ number, number ] };
+  { type: 'setUserLocation', payload: [ number, number ] }
+| { type: 'setPlaces', payload: Feature[] };
 
 export const placesReducer = ( state: PlacesState, action: PlacesAction ): PlacesState => {
 
