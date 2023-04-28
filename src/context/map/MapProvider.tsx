@@ -44,6 +44,9 @@ export const MapProvider = ({ children }:Props) => {
             
             newMarkers.push( newMarker );
         }
+
+        dispatch({ type: 'SetMarkers', payload: newMarkers });
+
     }, [ places ])
     
 
