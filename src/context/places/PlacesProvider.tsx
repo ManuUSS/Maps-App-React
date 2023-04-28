@@ -37,13 +37,15 @@ export const PlacesProvider = ({ children } : Props ) => {
         if( query.length === 0 ) return [];
         
         if( !state.userLocation ) throw new Error('No hay ubicacion del usuario')
+
+        dispatch({ type: 'setLoadingPlaces' });
         
         const { data } = await searchApi.get<PlacesResponse>(`/${ query }.json`, {
             params: {
                 proximity: state.userLocation.join(',')
             }
         });
-
+        dispatch({ type: 'setPlaces', payload: data.features });
         return data.features;
     }
     
