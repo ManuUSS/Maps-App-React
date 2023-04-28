@@ -9,6 +9,9 @@ export const SearchResults = () => {
     if( isLoadingPlaces ) 
         return <LoadingPlaces />
 
+    if( places.length === 0 ) 
+        return <></>
+
     return (
         <ul className='list-group mt-3'>
             {
