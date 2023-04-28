@@ -3,7 +3,8 @@ import { Feature } from '../../interfaces/places';
 
 type PlacesAction = 
   { type: 'setUserLocation', payload: [ number, number ] }
-| { type: 'setPlaces', payload: Feature[] };
+| { type: 'setPlaces', payload: Feature[] }
+| { type: 'setLoadingPlaces' };
 
 export const placesReducer = ( state: PlacesState, action: PlacesAction ): PlacesState => {
 
@@ -13,6 +14,20 @@ export const placesReducer = ( state: PlacesState, action: PlacesAction ): Place
                 ...state,
                 userLocation: action.payload,
                 isLoading   : false
+            }
+        
+        case 'setPlaces': 
+            return {
+                ...state,
+                isLoadingPlaces: false,
+                places: action.payload
+            }
+        
+        case 'setLoadingPlaces': 
+            return {
+                ...state,
+                isLoadingPlaces: true,
+                places: []
             }
         
 
