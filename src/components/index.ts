@@ -1,5 +1,6 @@
 
 export { Loading } from './Loading';
+export { LoadingPlaces } from './LoadingPlaces';
 export { MapView } from './MapView';
 export { MyLocation } from './MyLocation';
 export { ReactLogo } from './ReactLogo';
