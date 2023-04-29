@@ -40,7 +40,9 @@ export const SearchResults = () => {
                         >
                             { place.place_name }
                         </p>
-                        <button className='btn btn-outline-primary btn-sm'>Direcciones</button>
+                        <button className={`btn btn-sm ${ ( activeId === place.id ) ? 'btn-outline-light' : 'btn-outline-primary' }`}>
+                            Direcciones
+                        </button>
                     </li>
                 ))
             }
