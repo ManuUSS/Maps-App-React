@@ -106,6 +106,21 @@ export const MapProvider = ({ children }:Props) => {
             }
         }
         
+        state.map?.addSource( 'RouteString', sourceData );
+        state.map?.addLayer({
+            id: 'RouteString',
+            type: 'line',
+            source: 'RouteString',
+            layout: {
+                'line-cap': 'round',
+                'line-join': 'round'
+            },
+            paint: {
+                'line-color': 'black',
+                'line-width': 3
+            }
+        })
+
     }
 
     return (
