@@ -1,5 +1,5 @@
 import { useContext, useEffect, useReducer } from 'react';
-import { LngLatBounds, Map, Marker, Popup } from 'mapbox-gl';
+import { AnySourceData, LngLatBounds, Map, Marker, Popup } from 'mapbox-gl';
 import { MapContext } from './MapContext';
 import { mapReducer } from './mapReducer';
 import { PlacesContext } from '../places/PlacesContext';
@@ -89,6 +89,23 @@ export const MapProvider = ({ children }:Props) => {
             padding: 150
         });
 
+        const sourceData:AnySourceData = {
+            type: 'geojson',
+            data: {
+                type: 'FeatureCollection',
+                features: [
+                    {
+                        type: 'Feature',
+                        properties: {},
+                        geometry: {
+                            type: 'LineString',
+                            coordinates: coords
+                        }
+                    }
+                ]
+            }
+        }
+        
     }
 
     return (
