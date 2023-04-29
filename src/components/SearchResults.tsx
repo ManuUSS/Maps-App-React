@@ -5,7 +5,7 @@ import { Feature } from '../interfaces/places';
 
 export const SearchResults = () => {
 
-    const { places, isLoadingPlaces } = useContext( PlacesContext );
+    const { places, isLoadingPlaces, userLocation } = useContext( PlacesContext );
     const { map, getRouteBetweenPoints } = useContext( MapContext );
     const [ activeId, setActiveId ] = useState('');
 
@@ -20,7 +20,10 @@ export const SearchResults = () => {
     }
 
     const getRoute = ( place: Feature ) => {
-        getRouteBetweenPoints()
+
+        if( !userLocation ) return;
+        const [ lng, lat ] = place.center;
+        getRouteBetweenPoints( userLocation, [ lng, lat ]);
     }
 
     if( isLoadingPlaces ) 
