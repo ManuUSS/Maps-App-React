@@ -1,10 +1,21 @@
 import { useContext } from 'react'
-import { PlacesContext } from '../context'
+import { MapContext, PlacesContext } from '../context'
 import { LoadingPlaces } from './LoadingPlaces';
+import { Feature } from '../interfaces/places';
 
 export const SearchResults = () => {
 
     const { places, isLoadingPlaces } = useContext( PlacesContext );
+    const { map } = useContext( MapContext );
+    const onPlaceClick = ( place: Feature ) => {
+        
+        const [ lng, lat ] = place.center;
+        
+        map?.flyTo({
+            zoom: 14,
+            center: [ lng, lat ]
+        });
+    }
 
     if( isLoadingPlaces ) 
         return <LoadingPlaces />
