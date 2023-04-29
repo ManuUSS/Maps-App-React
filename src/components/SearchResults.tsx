@@ -18,7 +18,7 @@ export const SearchResults = () => {
                 places.map( ( place ) => (
                     <li 
                         key={ place.id }
-                        className='list-group-item list-group-item-action'>
+                        className='list-group-item list-group-item-action pointer'>
                         <h6>{ place.text }</h6>
                         <p 
                             className='text-muted' 

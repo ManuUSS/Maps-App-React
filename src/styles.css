@@ -22,3 +22,7 @@
     padding: 0.3125em;
     border-radius: 0.3125em;
 }
+
+.pointer {
+    cursor: pointer;
+}
